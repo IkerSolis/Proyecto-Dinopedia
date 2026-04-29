@@ -1,7 +1,4 @@
 # Proyecto-Dinopedia
-# Dinopedia: The Ultimate Dinosaur Wiki 🦖
-
-![Logo de Dinopedia](https://images.mirror-ai.com/proxy?url=https%3A%2F%2Fstorage.googleapis.com%2Fmirror-ai-public%2Fbe6f906e-82d2-4467-9c94-097561937968.png)
 
 [cite_start]**Dinopedia** es una enciclopedia digital independiente enfocada en la recopilación y presentación estructurada de información detallada sobre diversas especies de dinosaurios[cite: 48, 85, 86]. [cite_start]Este sistema ha sido diseñado bajo el estándar **IEEE Std 830-1998** para garantizar una especificación de requisitos robusta y profesional[cite: 78].
 
