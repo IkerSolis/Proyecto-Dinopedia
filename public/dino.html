@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Detalle del Dinosaurio</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <header>
+    <h1><a href="/">Dinopedia</a></h1>
+  </header>
+
+  <main>
+    <a href="index.html" class="btn-back">&larr; Volver</a>
+    <p id="error-msg" style="color:red; display:none;"></p>
+    
+    <div id="dino-content" style="display:none;" class="dino-detail">
+      <div class="dino-image-container">
+        <img id="dino-imagen" src="" alt="Dinosaurio">
+      </div>
+      <div class="dino-info-container">
+        <h2 id="dino-nombre"></h2>
+        <p><strong>Dieta:</strong> <span id="dino-dieta"></span></p>
+        <p><strong>Tamaño:</strong> <span id="dino-tamanio"></span></p>
+        <p><strong>Peso:</strong> <span id="dino-peso"></span></p>
+        <p><strong>Ubicación:</strong> <span id="dino-ubicacion"></span></p>
+        <div style="margin-top:20px;">
+          <strong>Descripción:</strong>
+          <p id="dino-descripcion" style="margin-top:10px;"></p>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <p>&copy; 2026 Dinopedia. Todos los derechos reservados.</p>
+  </footer>
+
+  <script src="js/dino.js"></script>
+</body>
+</html>
