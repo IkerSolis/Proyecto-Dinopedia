@@ -1,16 +1,4 @@
 document.addEventListener('DOMContentLoaded', () => {
-  // Verificar sesión
-  if (!sessionStorage.getItem('adminToken')) {
-    window.location.href = 'login.html';
-    return;
-  }
-
-  const btnLogout = document.getElementById('btn-logout');
-  btnLogout.addEventListener('click', (e) => {
-    e.preventDefault();
-    sessionStorage.removeItem('adminToken');
-    window.location.href = 'login.html';
-  });
 
   const btnAgregar = document.getElementById('btn-agregar');
   const admMsg = document.getElementById('adm-msg');
@@ -31,7 +19,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const imagen_url = document.getElementById('adm-imagen-url').value.trim();
     const descripcion = document.getElementById('adm-descripcion').value.trim();
 
-    const token = sessionStorage.getItem('adminToken');
+    const token = localStorage.getItem('adminToken');
     btnAgregar.disabled = true;
 
     try {

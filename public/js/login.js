@@ -18,7 +18,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
       if (response.ok) {
         const data = await response.json();
-        sessionStorage.setItem('adminToken', data.token);
+        localStorage.setItem('adminToken', data.token);
         window.location.href = 'admin.html';
       } else if (response.status === 401) {
         errorMsg.textContent = "Credenciales inválidas.";
