@@ -5,7 +5,7 @@
 ---
 
 ## Propósito del Proyecto
-El objetivo principal es crear una herramienta de referencia digital de fácil acceso, completa y actualizada que apoye propósitos educativos y de interés general. El sistema permite a los usuarios buscar, navegar y visualizar perfiles detallados de dinosaurios sin necesidad de registros o cuentas.
+El objetivo principal es crear una herramienta de referencia digital de fácil acceso, completa y actualizada que apoye propósitos educativos y de interés general. El sistema permite a los usuarios buscar, navegar y visualizar perfiles detallados de dinosaurios.
 
 ## Funcionalidades Clave
 
