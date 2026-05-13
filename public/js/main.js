@@ -1,11 +1,12 @@
 // --- Módulo: Carga de dinosaurios ---
-document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener('layoutReady', () => {
   const dinosContainer = document.getElementById('dinos-container');
   const errorContainer = document.getElementById('error-container');
   const searchBar = document.getElementById('search-bar');
   let debounceTimeout;
 
   const renderDinos = (dinos) => {
+    if (!dinosContainer) return;
     dinosContainer.innerHTML = '';
     errorContainer.style.display = 'none';
 
@@ -51,34 +52,40 @@ document.addEventListener('DOMContentLoaded', () => {
       const data = await response.json();
       renderDinos(data);
     } catch (error) {
-      errorContainer.textContent = "Error al conectar con el servidor.";
-      errorContainer.style.display = 'block';
+      if (errorContainer) {
+        errorContainer.textContent = "Error al conectar con el servidor.";
+        errorContainer.style.display = 'block';
+      }
       console.error(error);
     }
   };
 
   // --- Módulo: Búsqueda ---
-  searchBar.addEventListener('input', (e) => {
-    const term = e.target.value.trim();
-    
-    clearTimeout(debounceTimeout);
-    
-    debounceTimeout = setTimeout(async () => {
-      if (term.length >= 2) {
-        try {
-          const response = await fetch(`/api/search?q=${encodeURIComponent(term)}`);
-          if (!response.ok) throw new Error('Error en búsqueda');
-          const data = await response.json();
-          renderDinos(data);
-        } catch (error) {
-          errorContainer.textContent = "Error al buscar dinosaurios.";
-          errorContainer.style.display = 'block';
+  if (searchBar) {
+    searchBar.addEventListener('input', (e) => {
+      const term = e.target.value.trim();
+      
+      clearTimeout(debounceTimeout);
+      
+      debounceTimeout = setTimeout(async () => {
+        if (term.length >= 2) {
+          try {
+            const response = await fetch(`/api/search?q=${encodeURIComponent(term)}`);
+            if (!response.ok) throw new Error('Error en búsqueda');
+            const data = await response.json();
+            renderDinos(data);
+          } catch (error) {
+            if (errorContainer) {
+              errorContainer.textContent = "Error al buscar dinosaurios.";
+              errorContainer.style.display = 'block';
+            }
+          }
+        } else if (term.length === 0) {
+          fetchDinos();
         }
-      } else if (term.length === 0) {
-        fetchDinos();
-      }
-    }, 300);
-  });
+      }, 300);
+    });
+  }
 
   // Carga inicial
   fetchDinos();

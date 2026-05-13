@@ -1,18 +1,12 @@
-document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener('layoutReady', () => {
   const token = localStorage.getItem('adminToken');
-  const header = document.querySelector('header');
+  const authNav = document.getElementById('auth-nav');
   
-  if (header) {
-    let nav = header.querySelector('nav');
-    if (!nav) {
-      nav = document.createElement('nav');
-      header.appendChild(nav);
-    }
-
+  if (authNav) {
     if (token) {
-      nav.innerHTML = `
-        <a href="admin.html">Panel Admin</a>
-        <a href="#" id="btn-logout" style="margin-left: 15px;">Cerrar sesión</a>
+      authNav.innerHTML = `
+        <a href="admin.html" style="color:white; text-decoration:none;"><i class="bi bi-gear-fill"></i> Panel Admin</a>
+        <a href="#" id="btn-logout" style="color:white; text-decoration:none; margin-left: 15px;"><i class="bi bi-box-arrow-right"></i> Cerrar sesión</a>
       `;
 
       document.getElementById('btn-logout').addEventListener('click', (e) => {
@@ -28,7 +22,7 @@ document.addEventListener('DOMContentLoaded', () => {
       if (window.location.pathname.endsWith('admin.html')) {
         window.location.href = 'login.html';
       } else {
-        nav.innerHTML = `<a href="login.html">Admin</a>`;
+        authNav.innerHTML = `<a href="login.html" style="color:white; text-decoration:none;"><i class="bi bi-person-fill"></i> Iniciar Sesión</a>`;
       }
     }
   }

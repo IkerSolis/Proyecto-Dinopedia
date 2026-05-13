@@ -1,4 +1,4 @@
-document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener('layoutReady', () => {
   const btnLogin = document.getElementById('btn-login');
   const errorMsg = document.getElementById('error-msg');
 

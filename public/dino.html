@@ -4,39 +4,82 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Detalle del Dinosaurio</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
   <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
-  <header>
-    <h1><a href="/">Dinopedia</a></h1>
-  </header>
+  <div id="header-placeholder"></div>
 
-  <main>
-    <a href="index.html" class="btn-back">&larr; Volver</a>
-    <p id="error-msg" style="color:red; display:none;"></p>
-    
-    <div id="dino-content" style="display:none;" class="dino-detail">
-      <div class="dino-image-container">
-        <img id="dino-imagen" src="" alt="Dinosaurio">
-      </div>
-      <div class="dino-info-container">
-        <h2 id="dino-nombre"></h2>
-        <p><strong>Dieta:</strong> <span id="dino-dieta"></span></p>
-        <p><strong>Tamaño:</strong> <span id="dino-tamanio"></span></p>
-        <p><strong>Peso:</strong> <span id="dino-peso"></span></p>
-        <p><strong>Ubicación:</strong> <span id="dino-ubicacion"></span></p>
-        <div style="margin-top:20px;">
-          <strong>Descripción:</strong>
-          <p id="dino-descripcion" style="margin-top:10px;"></p>
+  <div class="layout-wrapper">
+    <div id="sidebar-placeholder"></div>
+
+    <main class="main-content">
+      <a href="index.html" class="btn-back"><i class="bi bi-arrow-left"></i> Volver a la página principal</a>
+      <p id="error-msg" style="color:red; display:none;"></p>
+      
+      <div id="dino-content" style="display:none;">
+        <div class="article-header-block">
+          <h2 id="dino-nombre"></h2>
+          <div class="tabs">
+            <span class="tab active"><i class="bi bi-book"></i> Artículo</span>
+            <span class="tab"><i class="bi bi-chat-text"></i> Discusión</span>
+          </div>
+        </div>
+        
+        <div class="article-content-split">
+          <div class="article-main-text">
+            <p id="dino-intro" style="font-size: 1.1em; line-height: 1.6; margin-bottom: 20px;"></p>
+            
+            <h3 class="section-title"><i class="bi bi-tag-fill"></i> Clasificación</h3>
+            <p id="dino-clasificacion"></p>
+            
+            <h3 class="section-title"><i class="bi bi-card-text"></i> Descripción</h3>
+            <p id="dino-descripcion"></p>
+
+            <h3 class="section-title"><i class="bi bi-globe-americas"></i> Historia y descubrimiento</h3>
+            <p id="dino-historia">La información sobre el descubrimiento y la historia de este dinosaurio aún está siendo investigada por nuestros paleontólogos. Vuelve pronto para obtener más actualizaciones.</p>
+          </div>
+          
+          <aside class="infobox">
+            <div class="infobox-image">
+              <img id="dino-imagen" src="" alt="Dinosaurio">
+              <p class="image-caption">Reconstrucción artística</p>
+            </div>
+            <table class="infobox-table">
+              <tr>
+                <th>Nombre científico</th>
+                <td id="dino-nombre-cientifico"></td>
+              </tr>
+              <tr>
+                <th>Período</th>
+                <td id="dino-periodo"></td>
+              </tr>
+              <tr>
+                <th>Dieta</th>
+                <td id="dino-dieta"></td>
+              </tr>
+              <tr>
+                <th>Tamaño</th>
+                <td id="dino-tamanio"></td>
+              </tr>
+              <tr>
+                <th>Peso</th>
+                <td id="dino-peso"></td>
+              </tr>
+              <tr>
+                <th>Ubicación</th>
+                <td id="dino-ubicacion"></td>
+              </tr>
+            </table>
+          </aside>
         </div>
       </div>
-    </div>
-  </main>
+    </main>
+  </div>
 
-  <footer>
-    <p>&copy; 2026 Dinopedia. Todos los derechos reservados.</p>
-  </footer>
+  <div id="footer-placeholder"></div>
 
+  <script src="js/layout.js"></script>
   <script src="js/session.js"></script>
   <script src="js/dino.js"></script>
 </body>

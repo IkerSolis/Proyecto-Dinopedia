@@ -1,4 +1,4 @@
-document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener('layoutReady', () => {
 
   const btnAgregar = document.getElementById('btn-agregar');
   const admMsg = document.getElementById('adm-msg');
